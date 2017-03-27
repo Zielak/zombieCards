@@ -1,0 +1,77 @@
+.Card{
+  position: relative;
+  float: left;
+  width: 8em;
+  height: 12em;
+  background: white;
+  border: 1px solid rgba(50, 50, 50, 0.2);
+  border-radius: 0.6em;
+  box-shadow: 0.1em 0.1em 0 rgba(70, 70, 70, 0.1);
+  box-sizing: border-box;
+}
+
+.icons{
+  font-size: 1.1rem;
+  position: absolute;
+  left: 0.5em;
+  top: 0.5em;
+}
+.icons.reverse{
+  transform: rotate(180deg);
+  left: auto;
+  top: auto;
+  right: 0.5em;
+  bottom: 0.5em;
+}
+
+.icons .suit{
+  font-size: 1.2em;
+}
+.Card.suit-hearts .icons{ color: red; }
+.Card.suit-clubs .icons{ color: dodgerblue; }
+.Card.suit-spades .icons{ color: black; }
+.Card.suit-monsters .icons{ color: green; }
+
+.backgroundColor{
+  position: absolute;
+  top: 0.3em; left: 0.3em; right: 0.3em; bottom: 0.3em;
+  opacity: 0.06;
+  border-radius: 0.4em;
+}
+.Card.suit-hearts .backgroundColor{ background-color: red; }
+.Card.suit-clubs .backgroundColor{ background-color: dodgerblue; }
+.Card.suit-spades .backgroundColor{ background-color: black; }
+.Card.suit-monsters .backgroundColor{ background-color: green; }
+
+
+.title{
+  transform: translateY(5em) rotate(-70deg);
+  margin: 0 -1em;
+  font-weight: bold;
+}
+
+
+/* Graphicsl borders */
+.Card .border{
+  position: absolute;
+  box-sizing: border-box;
+}
+.borderTop, .borderBottom{
+  left: 2em;
+  right: 2em;
+  height: 0.1em;
+}
+.borderRight, .borderLeft{
+  top: 3.5em;
+  bottom: 3.5em;
+  width: 0.1em;
+}
+.borderTop{ top: 0.8em; }
+.borderRight{ right: 0.8em; }
+.borderBottom{ bottom: 0.8em; }
+.borderLeft{ left: 0.8em; }
+
+.Card.type-action .border{ background-color: red; }
+.Card.type-attack .border{ background-color: blue; }
+.Card.type-monster .border{ background-color: green; }
+.Card.type-hybrid .border{ background-color: darkolivegreen; }
