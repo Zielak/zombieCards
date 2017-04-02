@@ -46,8 +46,11 @@ class Card extends Component {
         return '🏃'
       case LANDMINE:
         return '💥'
+      default:
+        return '?'
     }
   }
+
 
   getSuitChar(){
     switch(this.state.suit){
@@ -59,6 +62,23 @@ class Card extends Component {
         return '♠'
       case MONSTERS:
         return '𝚭'
+      default:
+        return '?'
+    }
+  }
+
+  getTypeString(){
+    switch(this.state.type){
+      case ATTACK:
+        return 'Karta Ataku'
+      case ACTION:
+        return 'Karta Akcji'
+      case MONSTER:
+        return 'Karta Potwór'
+      case HYBRID:
+        return 'Potworna karta Akcji'
+      default:
+        return ''
     }
   }
 
@@ -78,6 +98,8 @@ class Card extends Component {
         <div className="border borderRight"></div>
         <div className="border borderLeft"></div>
         <div className="border borderBottom"></div>
+        <div className="sideText sideLeft">{this.getTypeString()}</div>
+        <div className="sideText sideRight">{this.getTypeString()}</div>
         <div className="icons">
           <div className="rank">{this.getValueChar()}</div>
           <div className="suit">{this.getSuitChar()}</div>

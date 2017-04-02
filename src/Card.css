@@ -1,41 +1,74 @@
+@media print {
+  .Card {
+    page-break-inside: avoid;
+  }
+}
+
 .Card{
   position: relative;
   float: left;
-  width: 8em;
-  height: 12em;
+  width: 56mm;
+  height: 87mm;
   background: white;
-  border: 1px solid rgba(50, 50, 50, 0.2);
-  border-radius: 0.6em;
-  box-shadow: 0.1em 0.1em 0 rgba(70, 70, 70, 0.1);
+  /*border: 1px solid rgba(50, 50, 50, 0.2);*/
+  border-radius: 5mm;
+  /*box-shadow: 0.1em 0.1em 0 rgba(70, 70, 70, 0.1);*/
   box-sizing: border-box;
+
+  break-before: avoid-page;
+}
+.Card::after, .Card::before{
+  content: '';
+  background: black;
+  width: 1mm;
+  height: 1mm;
+  position: absolute;
+  left: 0mm;
+  top: 0mm;
+}
+.Card::before{
+  left: auto;
+  top: auto;
+  right: 0mm;
+  bottom: 0mm;
 }
 
 .icons{
   font-size: 1.1rem;
   position: absolute;
-  left: 0.5em;
-  top: 0.5em;
+  left: 0;
+  top: 0;
+  
+  background: white;
+  border-right: 1px solid rgba(50, 50, 50, 0.2);
+  border-bottom: 1px solid rgba(50, 50, 50, 0.2);
+  border-radius: 0.3em;
+  padding: 0.2em;
 }
 .icons.reverse{
   transform: rotate(180deg);
   left: auto;
   top: auto;
-  right: 0.5em;
-  bottom: 0.5em;
+  right: 0;
+  bottom: 0;
 }
+
 
 .icons .suit{
   font-size: 1.2em;
+  margin-top: -0.3em;
 }
 .Card.suit-hearts .icons{ color: red; }
 .Card.suit-clubs .icons{ color: dodgerblue; }
 .Card.suit-spades .icons{ color: black; }
 .Card.suit-monsters .icons{ color: green; }
 
+
 .backgroundColor{
+  /*display: none;*/
   position: absolute;
-  top: 0.3em; left: 0.3em; right: 0.3em; bottom: 0.3em;
-  opacity: 0.06;
+  top: 1.3em; left: 1.3em; right: 1.3em; bottom: 1.3em;
+  opacity: 0.1;
   border-radius: 0.4em;
 }
 .Card.suit-hearts .backgroundColor{ background-color: red; }
@@ -57,21 +90,53 @@
   box-sizing: border-box;
 }
 .borderTop, .borderBottom{
-  left: 2em;
-  right: 2em;
-  height: 0.1em;
+  left: 1.2rem;
+  right: 1.2rem;
+  height: 0.1rem;
 }
 .borderRight, .borderLeft{
-  top: 3.5em;
-  bottom: 3.5em;
-  width: 0.1em;
+  top: 1.2rem;
+  bottom: 1.2rem;
+  width: 0.1rem;
 }
-.borderTop{ top: 0.8em; }
-.borderRight{ right: 0.8em; }
-.borderBottom{ bottom: 0.8em; }
-.borderLeft{ left: 0.8em; }
+.borderTop{ top: 0.8rem; }
+.borderRight{ right: 0.8rem; }
+.borderBottom{ bottom: 0.8rem; }
+.borderLeft{ left: 0.8rem; }
 
 .Card.type-action .border{ background-color: red; }
-.Card.type-attack .border{ background-color: blue; }
+/*.Card.type-attack .border{ background-color: blue; }*/
 .Card.type-monster .border{ background-color: green; }
 .Card.type-hybrid .border{ background-color: darkolivegreen; }
+
+
+
+.Card .sideText{
+  position: absolute;
+  box-sizing: border-box;
+  text-align: left;
+
+  padding: 0.3em;
+  background: white;
+  border: 0.1em dashed white;
+  border-radius: 0.5em;
+
+  text-orientation: sideways;
+  font-size: 0.7rem;
+}
+.Card.type-action .sideText{ border-color: red; }
+/*.Card.type-attack .sideText{ border-color: blue; }*/
+.Card.type-monster .sideText{ border-color: green; }
+.Card.type-hybrid .sideText{ border-color: darkolivegreen; }
+
+.Card .sideText.sideLeft{
+  left: -0.4rem;
+  top: 4rem;
+  writing-mode: vertical-rl;
+}
+.Card .sideText.sideRight{
+  right: 0.2rem;
+  bottom: 4rem;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+}
