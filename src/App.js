@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
-import Card from './Card.js';
-// import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import Card from './Card.js'
+import Board from './Board.js'
+// import logo from './logo.svg'
+import './App.css'
 
 class App extends Component {
   render() {
@@ -19,18 +20,19 @@ class App extends Component {
       cards.push(<Card key={i+'m'} value={i} suit='monsters' type='monster' />)
       cards.push(<Card key={i+'m2'} value={i} suit='monsters' type='monster' />)
     }
-    cards.push(<Card key='dm' value='duel' suit='monsters' type='hybrid' title='Duel Monster' />)
-    cards.push(<Card key='hm' value='headshot' suit='monsters' type='hybrid' title='Headshot Monster' />)
-    cards.push(<Card key='em' value='evasion' suit='monsters' type='hybrid' title='Evasion Monster' />)
-    cards.push(<Card key='lm' value='landmine' suit='monsters' type='hybrid' title='Landmine Monster' />)
+    cards.push(<Card key='dm' value='duel' suit='monsters' type='hybrid' title='Pojedynek' />)
+    cards.push(<Card key='hm' value='headshot' suit='monsters' type='hybrid' title='Headshot' />)
+    cards.push(<Card key='em' value='evasion' suit='monsters' type='hybrid' title='Unik' />)
+    cards.push(<Card key='lm' value='landmine' suit='monsters' type='hybrid' title='Mina' />)
 
     // Actions
     for (let suit of ['hearts', 'spades', 'clubs']) {
-      cards.push(<Card key={'d'+suit[0]} value='duel' suit={suit} type='action' title='Duel' />)
+      cards.push(<Card key={'d'+suit[0]} value='duel' suit={suit} type='action' title='Pojedynek' />)
       cards.push(<Card key={'h'+suit[0]} value='headshot' suit={suit} type='action' title='Headshot' />)
-      cards.push(<Card key={'e'+suit[0]} value='evasion' suit={suit} type='action' title='Evasion' />)
-      cards.push(<Card key={'l'+suit[0]} value='landmine' suit={suit} type='action' title='Landmine' />)
+      cards.push(<Card key={'e'+suit[0]} value='evasion' suit={suit} type='action' title='Unik' />)
+      cards.push(<Card key={'l'+suit[0]} value='landmine' suit={suit} type='action' title='Mina' />)
     }
+
 
     return (
       <div className="App">
@@ -40,6 +42,7 @@ class App extends Component {
         <div className="cards">
           {cards}
         </div>
+        <Board/>
       </div>
     );
   }

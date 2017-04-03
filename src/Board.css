@@ -1,0 +1,111 @@
+
+
+.Board{
+  position: relative;
+  border: 1px solid black;
+
+  display: flex;
+  justify-content: space-around;
+
+  /* A4 - 40mm */
+  height: 170mm;
+  width: 257mm;
+
+  transform: rotate(90deg) translateX(70mm);
+}
+
+.Board:before{
+  position: absolute;
+  content: '';
+  left: 0;
+  right: 50%;
+  top: 0;
+  bottom: 0;
+  opacity: 0.1;
+  background: radial-gradient(circle, transparent 20%, #5a3600 20%, #5a3600 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #5a3600 20%, #5a3600 80%, transparent 80%, transparent) 50px 50px, linear-gradient(#ffffff 8px, transparent 8px) 0 -4px, linear-gradient(90deg, #ffffff 8px, transparent 8px) -4px 0;
+  background-color: #5a3600;
+  background-size: 100px 100px, 100px 100px, 50px 50px, 50px 50px;
+}
+.Board:after{
+  z-index: -1;
+  position: absolute;
+  content: '';
+  left: 50%;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 0.2;
+  background-color:#aaebff;
+  background-image: 
+  radial-gradient(circle at 100% 150%, #aaebff 24%, white 25%, white 28%, #aaebff 29%, #aaebff 36%, white 36%, white 40%, transparent 40%, transparent),
+  radial-gradient(circle at 0    150%, #aaebff 24%, white 25%, white 28%, #aaebff 29%, #aaebff 36%, white 36%, white 40%, transparent 40%, transparent),
+  radial-gradient(circle at 50%  100%, white 10%, #aaebff 11%, #aaebff 23%, white 24%, white 30%, #aaebff 31%, #aaebff 43%, white 44%, white 50%, #aaebff 51%, #aaebff 63%, white 64%, white 71%, transparent 71%, transparent),
+  radial-gradient(circle at 100% 50%, white 5%, #aaebff 6%, #aaebff 15%, white 16%, white 20%, #aaebff 21%, #aaebff 30%, white 31%, white 35%, #aaebff 36%, #aaebff 45%, white 46%, white 49%, transparent 50%, transparent),
+  radial-gradient(circle at 0    50%, white 5%, #aaebff 6%, #aaebff 15%, white 16%, white 20%, #aaebff 21%, #aaebff 30%, white 31%, white 35%, #aaebff 36%, #aaebff 45%, white 46%, white 49%, transparent 50%, transparent);
+  background-size:100px 50px;
+}
+
+
+.BoardCard{
+  position: relative;
+  width: 56mm;
+  height: 87mm;
+  box-sizing: content-box;
+  align-self: center;
+
+  align-self: center;
+  box-shadow: 0.5mm 0.5mm 2mm 1mm rgba(100, 100, 100, 0.3);
+
+  border: 5mm solid transparent;
+  border-radius: 2mm;
+}
+
+.BoardCard.grave{
+  background: #5a3600;
+}
+.BoardCard.escape{
+  background: #aaebff;
+}
+
+.BoardCard:before,
+.BoardCard:after,
+.BoardCard .sides:before,
+.BoardCard .sides:after {
+  position: absolute;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.BoardCard:before,
+.BoardCard:after {
+  top: -25mm; bottom: -25mm;
+  left: 0; right: 0;
+}
+.BoardCard:after{
+  transform: rotate(180deg);
+}
+
+.BoardCard .sides:before,
+.BoardCard .sides:after{
+  top: 0; bottom: 0;
+  left: -25mm; right: -25mm;
+  writing-mode: vertical-rl;
+}
+.BoardCard .sides:after{
+  transform: rotate(180deg);
+}
+
+.BoardCard.grave:before,
+.BoardCard.grave:after,
+.BoardCard.grave .sides:before,
+.BoardCard.grave .sides:after {
+  content: 'CMENTARZ';
+  color: #5a3600;
+}
+.BoardCard.escape:before,
+.BoardCard.escape:after,
+.BoardCard.escape .sides:before,
+.BoardCard.escape .sides:after {
+  content: 'UCIECZKA';
+  color: #006cab;
+}

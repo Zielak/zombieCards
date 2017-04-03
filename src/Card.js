@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './Card.css';
+import descriptions from './Descriptions';
 
 const HEARTS   = 'hearts'
 const SPADES   = 'spades'
@@ -31,8 +32,12 @@ class Card extends Component {
   }
 
   getValueChar(str){
-    return (this.state.type === ATTACK || this.state.type === MONSTER) ?
-      this.state.value : this.getActionChar()
+    if(this.state.type === ATTACK || this.state.type === MONSTER){
+      return this.state.value
+    }else if(this.state.type !== HYBRID){
+      return this.getActionChar()
+    }
+    return '15'
   }
 
   // Action cards have their action "type" in value
@@ -46,6 +51,21 @@ class Card extends Component {
         return '🏃'
       case LANDMINE:
         return '💥'
+      default:
+        return '?'
+    }
+  }
+
+  getActionString(){
+    switch(this.state.value){
+      case DUEL:
+        return 'Pojedynek'
+      case HEADSHOT:
+        return 'Headshot'
+      case EVASION:
+        return 'Unik'
+      case LANDMINE:
+        return 'Mina'
       default:
         return '?'
     }
@@ -70,13 +90,13 @@ class Card extends Component {
   getTypeString(){
     switch(this.state.type){
       case ATTACK:
-        return 'Karta Ataku'
+        return 'Atak'
       case ACTION:
-        return 'Karta Akcji'
+        return 'Akcja'
       case MONSTER:
-        return 'Karta Potwór'
+        return 'Potwór'
       case HYBRID:
-        return 'Potworna karta Akcji'
+        return 'Potwór/Akcja'
       default:
         return ''
     }
@@ -90,10 +110,31 @@ class Card extends Component {
     return str
   }
 
+  getDescription(){
+    return (this.state.title || descriptions[this.state.value]) ? <div className="description">
+      {this.getHybridDescription()}
+      <div className="title">{this.state.title}</div>
+      {descriptions[this.state.value]}
+    </div> : ''
+  }
+
+  getHybridDescription(){
+    return this.state.type === HYBRID ?
+      <div className="description-hybrid">
+        Po pokonaniu zagraj jak:
+      </div> : ''
+  }
+
+  getValueBox(){
+    return
+  }
+
   render() {
     return (
       <div className={this.getClassNames()}>
         <div className="backgroundColor"></div>
+        {this.getDescription()}
+        {this.getValueBox()}
         <div className="border borderTop"></div>
         <div className="border borderRight"></div>
         <div className="border borderLeft"></div>
@@ -108,7 +149,6 @@ class Card extends Component {
           <div className="rank">{this.getValueChar()}</div>
           <div className="suit">{this.getSuitChar()}</div>
         </div>
-        <div className="title">{this.state.title}</div>
         <div className="graphic">{this.state.image}</div>
       </div>
     );

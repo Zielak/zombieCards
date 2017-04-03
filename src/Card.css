@@ -6,35 +6,38 @@
 
 .Card{
   position: relative;
-  float: left;
   width: 56mm;
   height: 87mm;
+  margin: -1px;
   background: white;
-  /*border: 1px solid rgba(50, 50, 50, 0.2);*/
-  border-radius: 5mm;
-  /*box-shadow: 0.1em 0.1em 0 rgba(70, 70, 70, 0.1);*/
+
+  border: 1px solid white;
+  border-radius: 2mm;
   box-sizing: border-box;
 
   break-before: avoid-page;
 }
-.Card::after, .Card::before{
-  content: '';
-  background: black;
-  width: 1mm;
-  height: 1mm;
+.Card:before, .Card:after {
   position: absolute;
-  left: 0mm;
-  top: 0mm;
+  content: '';
+  border: solid black;
+  z-index: -1;
 }
-.Card::before{
-  left: auto;
-  top: auto;
-  right: 0mm;
-  bottom: 0mm;
+.Card:before {
+  top: -10mm; bottom: -10mm;
+  left: -1px; right: 0;
+  border-width: 0 1px;
+  border-right-color: red;
+}
+.Card:after {
+  left: -10mm; right: -10mm;
+  top: -1px; bottom: 0;
+  border-width: 1px 0;
+  border-bottom-color: red;
 }
 
 .icons{
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   position: absolute;
   left: 0;
   top: 0;
@@ -68,19 +71,34 @@
   /*display: none;*/
   position: absolute;
   top: 1.3em; left: 1.3em; right: 1.3em; bottom: 1.3em;
-  opacity: 0.1;
+  opacity: 0.15;
   border-radius: 0.4em;
 }
 .Card.suit-hearts .backgroundColor{ background-color: red; }
 .Card.suit-clubs .backgroundColor{ background-color: dodgerblue; }
 .Card.suit-spades .backgroundColor{ background-color: black; }
 .Card.suit-monsters .backgroundColor{ background-color: green; }
+.Card.suit-monsters.type-hybrid .backgroundColor{ background-color: darkolivegreen; }
 
 
 .title{
-  transform: translateY(5em) rotate(-70deg);
-  margin: 0 -1em;
+  font-size: 1rem;
   font-weight: bold;
+  margin: 0.2em 0;
+}
+.description {
+  position: absolute;
+  bottom: 10mm;
+  margin: 0 10mm;
+  padding: 2mm;
+  font-size: 0.6rem;
+  letter-spacing: -0.05em;
+  line-height: 1.2;
+  background: white;
+}
+.description-hybrid{
+  font-size: 0.55rem;
+  font-style: italic;
 }
 
 
@@ -109,6 +127,10 @@
 .Card.type-monster .border{ background-color: green; }
 .Card.type-hybrid .border{ background-color: darkolivegreen; }
 
+.Card b.action{ color: red; }
+.Card b.attack{ color: blue; }
+.Card b.monster{ color: green; }
+.Card b.hybrid{ color: darkolivegreen; }
 
 
 .Card .sideText{
@@ -123,6 +145,7 @@
 
   text-orientation: sideways;
   font-size: 0.7rem;
+  line-height: 1;
 }
 .Card.type-action .sideText{ border-color: red; }
 /*.Card.type-attack .sideText{ border-color: blue; }*/

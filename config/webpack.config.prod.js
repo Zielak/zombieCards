@@ -141,7 +141,7 @@ module.exports = {
       {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract(
-          'style',
+          'style?{attrs:{media:"all"}}',
           'css?importLoaders=1!postcss',
           extractTextPluginOptions
         )
@@ -196,7 +196,7 @@ module.exports = {
         removeRedundantAttributes: true,
         useShortDoctype: true,
         removeEmptyAttributes: true,
-        removeStyleLinkTypeAttributes: true,
+        removeStyleLinkTypeAttributes: false,
         keepClosingSlash: true,
         minifyJS: true,
         minifyCSS: true,
