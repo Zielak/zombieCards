@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Serif');
+@page{
+  size: auto;   /* auto is the initial value */ 
 
+  /* this affects the margin in the printer settings */ 
+  margin: 10mm;
+} 
 
 html {
   font-size: 22px;

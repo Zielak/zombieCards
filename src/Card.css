@@ -6,9 +6,10 @@
 
 .Card{
   position: relative;
+  float: left;
   width: 56mm;
   height: 87mm;
-  margin: -1px;
+  margin: 1mm;
   background: white;
 
   border: 1px solid white;

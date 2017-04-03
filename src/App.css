@@ -19,7 +19,6 @@
 }
 
 .cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  padding: 2mm;
+  overflow: hidden;
 }

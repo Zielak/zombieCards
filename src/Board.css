@@ -4,14 +4,14 @@
   position: relative;
   border: 1px solid black;
 
-  display: flex;
-  justify-content: space-around;
-
   /* A4 - 40mm */
   height: 170mm;
   width: 257mm;
+  margin-top: 50mm;
 
-  transform: rotate(90deg) translateX(70mm);
+  transform: translateX(-40mm) rotate(90deg);
+  overflow: auto;
+  break-before: always;
 }
 
 .Board:before{
@@ -47,13 +47,11 @@
 
 
 .BoardCard{
-  position: relative;
+  position: absolute;
   width: 56mm;
   height: 87mm;
   box-sizing: content-box;
-  align-self: center;
 
-  align-self: center;
   box-shadow: 0.5mm 0.5mm 2mm 1mm rgba(100, 100, 100, 0.3);
 
   border: 5mm solid transparent;
@@ -61,9 +59,13 @@
 }
 
 .BoardCard.grave{
+  top: 37mm;
+  left: 30mm;
   background: #5a3600;
 }
 .BoardCard.escape{
+  top: 37mm;
+  right: 30mm;
   background: #aaebff;
 }
 

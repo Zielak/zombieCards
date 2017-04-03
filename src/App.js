@@ -36,9 +36,9 @@ class App extends Component {
 
     return (
       <div className="App">
-        <p className="App-intro">
+        {/*<p className="App-intro">
           We've got {cards.length} cards!
-        </p>
+        </p>*/}
         <div className="cards">
           {cards}
         </div>

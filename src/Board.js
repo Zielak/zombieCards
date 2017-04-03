@@ -13,6 +13,7 @@ class Board extends Component {
   render(){
     return (
       <div className="Board">
+        <div className="BreakPlz"></div>
         <div className="BoardCard grave">
           <div className="sides"></div>
         </div>
