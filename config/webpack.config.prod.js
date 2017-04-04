@@ -111,7 +111,8 @@ module.exports = {
           /\.(js|jsx)$/,
           /\.css$/,
           /\.json$/,
-          /\.svg$/
+          /\.svg$/,
+          /\.png$/,
         ],
         loader: 'url',
         query: {
@@ -156,6 +157,14 @@ module.exports = {
       // "file" loader for svg
       {
         test: /\.svg$/,
+        loader: 'file',
+        query: {
+          name: 'static/media/[name].[hash:8].[ext]'
+        }
+      },
+      // "file" loader for png
+      {
+        test: /\.png$/,
         loader: 'file',
         query: {
           name: 'static/media/[name].[hash:8].[ext]'

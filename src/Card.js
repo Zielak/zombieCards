@@ -3,6 +3,11 @@ import React, { Component } from 'react';
 import './Card.css';
 import descriptions from './Descriptions';
 
+import IconDuel from '../assets/icon-duel.png';
+import IconEvasion from '../assets/icon-evasion.png';
+import IconLandmine from '../assets/icon-landmine.png';
+import IconHeadshot from '../assets/icon-target.png';
+
 const HEARTS   = 'hearts'
 const SPADES   = 'spades'
 const CLUBS    = 'clubs'
@@ -44,13 +49,13 @@ class Card extends Component {
   getActionChar(){
     switch(this.state.value){
       case DUEL:
-        return '⚔️'
+        return <img src={IconDuel} alt="⚔️"/>
       case HEADSHOT:
-        return '⊙'
+        return <img src={IconHeadshot} alt="🎯"/>
       case EVASION:
-        return '🏃'
+        return <img src={IconEvasion} alt="🏃"/>
       case LANDMINE:
-        return '💥'
+        return <img src={IconLandmine} alt="💥"/>
       default:
         return '?'
     }
