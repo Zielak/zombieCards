@@ -93,14 +93,14 @@ define('CLEAN_UP', true);
  *
  * @var string Full path to the file name
  */
-define('VERSION_FILE', TMP_DIR.'VERSION');
+define('VERSION_FILE', '' /*TMP_DIR.'VERSION'*/);
 
 /**
  * Time limit for each command.
  *
  * @var int Time in seconds
  */
-define('TIME_LIMIT', 30);
+define('TIME_LIMIT', 120);
 
 /**
  * OPTIONAL

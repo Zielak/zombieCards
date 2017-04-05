@@ -266,9 +266,9 @@ if (!is_dir(TMP_DIR)) {
 }
 
 // Update the submodules
-$commands[] = sprintf(
-	'git submodule update --init --recursive'
-);
+// $commands[] = sprintf(
+// 	'git submodule update --init --recursive'
+// );
 
 // Describe the deployed version
 if (defined('VERSION_FILE') && VERSION_FILE !== '') {
@@ -331,6 +331,29 @@ if (CLEAN_UP) {
 		, TMP_DIR
 	);
 }
+
+$commands[] = sprintf(
+	'cd %s && npm7 install'
+	, TARGET_DIR
+);
+$commands[] = sprintf(
+	'cd %s && npm7 run build'
+	, TARGET_DIR
+);
+$commands[] = sprintf(
+	'mv %sbuild %s..'
+	, TARGET_DIR
+	, TARGET_DIR
+);
+$commands[] = sprintf(
+	'rm -rf %s'
+	, TARGET_DIR
+);
+$commands[] = sprintf(
+	'mv %s../build/* %s'
+	, TARGET_DIR
+	, TARGET_DIR
+);
 
 // =======================================[ Run the command steps ]===
 $output = '';
