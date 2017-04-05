@@ -21,14 +21,14 @@ class App extends Component {
       cards.push(<Card key={i+'m2'} value={i} suit='monsters' type='monster' />)
     }
     cards.push(<Card key='dm' value='duel' suit='monsters' type='hybrid' title='Pojedynek' />)
-    cards.push(<Card key='hm' value='headshot' suit='monsters' type='hybrid' title='Headshot' />)
+    cards.push(<Card key='hm' value='headshot' suit='monsters' type='hybrid' title='Celny strał' />)
     cards.push(<Card key='em' value='evasion' suit='monsters' type='hybrid' title='Unik' />)
     cards.push(<Card key='lm' value='landmine' suit='monsters' type='hybrid' title='Mina' />)
 
     // Actions
     for (let suit of ['hearts', 'spades', 'clubs']) {
       cards.push(<Card key={'d'+suit[0]} value='duel' suit={suit} type='action' title='Pojedynek' />)
-      cards.push(<Card key={'h'+suit[0]} value='headshot' suit={suit} type='action' title='Headshot' />)
+      cards.push(<Card key={'h'+suit[0]} value='headshot' suit={suit} type='action' title='Celny strał' />)
       cards.push(<Card key={'e'+suit[0]} value='evasion' suit={suit} type='action' title='Unik' />)
       cards.push(<Card key={'l'+suit[0]} value='landmine' suit={suit} type='action' title='Mina' />)
     }

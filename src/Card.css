@@ -67,9 +67,6 @@
   height: 1em;
 }
 .icons .suit{
-  text-indent: -99em;
-  background: url('../assets/icon-suits.png');
-  background-size: 4em 1em;
   width: 1em;
   height: 1em;
 }
@@ -198,9 +195,9 @@
 
 
 
-.Card b.action{ color: red; }
+/*.Card b.action{ color: red; }
 .Card b.attack{ color: blue; }
 .Card b.monster{ color: green; }
-.Card b.hybrid{ color: darkolivegreen; }
+.Card b.hybrid{ color: darkolivegreen; }*/
 
 

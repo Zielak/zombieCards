@@ -8,6 +8,11 @@ import IconEvasion from '../assets/icon-evasion.png';
 import IconLandmine from '../assets/icon-landmine.png';
 import IconHeadshot from '../assets/icon-target.png';
 
+import IconHearts from '../assets/icon-duel.png';
+import IconClubs from '../assets/icon-evasion.png';
+import IconSpades from '../assets/icon-landmine.png';
+import IconMonsters from '../assets/icon-target.png';
+
 const HEARTS   = 'hearts'
 const SPADES   = 'spades'
 const CLUBS    = 'clubs'
@@ -65,7 +70,7 @@ class Card extends Component {
       case DUEL:
         return 'Pojedynek'
       case HEADSHOT:
-        return 'Headshot'
+        return 'Celny strał'
       case EVASION:
         return 'Unik'
       case LANDMINE:
@@ -77,20 +82,22 @@ class Card extends Component {
 
 
   getSuit(){
-    let alt = '';
+    let image
     switch(this.state.suit){
       case HEARTS:
-        alt = '♥'; break
+        image = <img src={IconHearts} alt='♥'/>; break
       case CLUBS:
-        alt = '♣'; break
+        image = <img src={IconClubs} alt='♣'/>; break
       case SPADES:
-        alt = '♠'; break
+        image = <img src={IconSpades} alt='♠'/>; break
       case MONSTERS:
-        alt = '𝚭'; break
+        image = <img src={IconMonsters} alt='P'/>; break
       default:
-        alt = '?'; break
+        return ''
     }
-    return alt
+    return <div className="suit">
+      {image}
+    </div>
   }
 
   getTypeString(){
@@ -156,16 +163,16 @@ class Card extends Component {
     return (
       <div className={this.getClassNames()}>
         <div className="background" style={this.value2opacity()}></div>
-        {this.getImage()}
+        {/*{this.getImage()}*/}
         {this.getDescription()}
         <div className="icons">
           <div className="rank">{this.getValueChar()}</div>
-          <div className="suit">{this.getSuit()}</div>
+          {this.getSuit()}
           <div className="type">{this.getTypeString()}</div>
         </div>
         <div className="icons reverse">
           <div className="rank">{this.getValueChar()}</div>
-          <div className="suit">{this.getSuit()}</div>
+          {this.getSuit()}
           <div className="type">{this.getTypeString()}</div>
         </div>
       </div>

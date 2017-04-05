@@ -2,7 +2,7 @@ import React from 'react';
 
 const descriptions = {
   'duel': <span>
-    Każdy wybiera 1 kartę do pojedynku. Najsłabszy bierze wszsytko. <b className="action">Akcje</b> i&nbsp;<b className="monster">Potwory</b> = 1&nbsp;punkt.
+    Każdy wybiera 1 kartę do pojedynku. Najsłabszy bierze wszystko.<br/><b className="action">Akcje</b> i&nbsp;<b className="monster">Potwory</b> = 1&nbsp;punkt.
   </span>,
   'headshot': <span>
     Natychmiast zabij dowolnego <b className="monster">Potwora</b>. Zrzuć na cmentarz.
