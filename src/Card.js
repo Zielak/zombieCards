@@ -31,8 +31,7 @@ class Card extends Component {
       title: props.title || '',
       value: props.value || HEADSHOT,
       suit: props.suit || HEARTS,
-      type: props.type || ACTION,
-      image: props.image || ''
+      type: props.type || ACTION
     };
   }
 
@@ -77,19 +76,21 @@ class Card extends Component {
   }
 
 
-  getSuitChar(){
+  getSuit(){
+    let alt = '';
     switch(this.state.suit){
       case HEARTS:
-        return '♥'
+        alt = '♥'; break
       case CLUBS:
-        return '♣'
+        alt = '♣'; break
       case SPADES:
-        return '♠'
+        alt = '♠'; break
       case MONSTERS:
-        return '𝚭'
+        alt = '𝚭'; break
       default:
-        return '?'
+        alt = '?'; break
     }
+    return alt
   }
 
   getTypeString(){
@@ -116,10 +117,18 @@ class Card extends Component {
   }
 
   getDescription(){
-    return (this.state.title || descriptions[this.state.value]) ? <div className="description">
-      {this.getHybridDescription()}
-      <div className="title">{this.state.title}</div>
-      {descriptions[this.state.value]}
+    return (this.state.title || descriptions[this.state.value]) ?
+    <div>
+        <div className="description">
+        {this.getHybridDescription()}
+        <div className="title">{this.state.title}</div>
+        {descriptions[this.state.value]}
+      </div>
+      <div className="description reverse">
+        {this.getHybridDescription()}
+        <div className="title">{this.state.title}</div>
+        {descriptions[this.state.value]}
+      </div>
     </div> : ''
   }
 
@@ -130,31 +139,35 @@ class Card extends Component {
       </div> : ''
   }
 
-  getValueBox(){
-    return
+  getImage(){
+    return this.state.type === ACTION ?
+      <div className={'graphic graphic-'+this.state.value}>
+      </div>
+      : ''
+  }
+
+  value2opacity(){
+    return !!this.state.value ? {
+      opacity: (parseFloat(this.state.value)) /10
+    } : {}
   }
 
   render() {
     return (
       <div className={this.getClassNames()}>
-        <div className="backgroundColor"></div>
+        <div className="background" style={this.value2opacity()}></div>
+        {this.getImage()}
         {this.getDescription()}
-        {this.getValueBox()}
-        <div className="border borderTop"></div>
-        <div className="border borderRight"></div>
-        <div className="border borderLeft"></div>
-        <div className="border borderBottom"></div>
-        <div className="sideText sideLeft">{this.getTypeString()}</div>
-        <div className="sideText sideRight">{this.getTypeString()}</div>
         <div className="icons">
           <div className="rank">{this.getValueChar()}</div>
-          <div className="suit">{this.getSuitChar()}</div>
+          <div className="suit">{this.getSuit()}</div>
+          <div className="type">{this.getTypeString()}</div>
         </div>
         <div className="icons reverse">
           <div className="rank">{this.getValueChar()}</div>
-          <div className="suit">{this.getSuitChar()}</div>
+          <div className="suit">{this.getSuit()}</div>
+          <div className="type">{this.getTypeString()}</div>
         </div>
-        <div className="graphic">{this.state.image}</div>
       </div>
     );
   }

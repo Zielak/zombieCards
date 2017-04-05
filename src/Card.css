@@ -38,68 +38,134 @@
 }
 
 .icons{
-  font-size: 1.2rem;
+  font-size: 5mm;
   position: absolute;
-  left: 0;
-  top: 0;
+  left: 2mm;
+  top: 2mm;
+
+  padding-right: 2mm;
+  padding-bottom: 3mm;
   
   background: white;
-  border-right: 1px solid rgba(50, 50, 50, 0.2);
-  border-bottom: 1px solid rgba(50, 50, 50, 0.2);
-  border-radius: 0.3em;
-  padding: 0.2em;
+  border-left: 1mm solid white;
+  border-top: 1mm solid white;
 }
 .icons.reverse{
   transform: rotate(180deg);
   left: auto;
   top: auto;
-  right: 0;
-  bottom: 0;
+  right: 2mm;
+  bottom: 2mm;
 }
 
 
-.icons .suit{
-  font-size: 1.2em;
-  margin-top: -0.3em;
-}
 .icons .rank{
+  text-align: center;
+  letter-spacing: -0.1em;
+  line-height: 0.75;
   width: 1em;
   height: 1em;
-  filter: color
 }
-.icons .rank img{
+.icons .suit{
+  text-indent: -99em;
+  background: url('../assets/icon-suits.png');
+  background-size: 4em 1em;
+  width: 1em;
+  height: 1em;
+}
+.icons img{
   width: 100%;
   height: 100%;
 }
-.Card.suit-hearts .icons{ color: red; }
-.Card.suit-clubs .icons{ color: dodgerblue; }
-.Card.suit-spades .icons{ color: black; }
-.Card.suit-monsters .icons{ color: green; }
 
-.Card.suit-hearts .icons .rank img{ 
-  filter: contrast(0) sepia() saturate(60) hue-rotate(-11deg);
+.icons .type{
+  font-size: 0.8em;
+  writing-mode: vertical-lr;
+  line-height: 1;
+  text-transform: uppercase;
+  padding-top: 2mm;
+}
+
+
+.Card.suit-hearts .icons .rank img,{ 
+  filter: contrast(0) sepia() saturate(70) hue-rotate(-12deg) brightness(84%);
 }
 .Card.suit-clubs .icons .rank img{ 
-  filter: contrast(0) sepia() saturate(20) hue-rotate(193deg);
+  filter: contrast(0) sepia() saturate(3) hue-rotate(124deg) brightness(87%);
 }
-.Card.suit-spades .icons .rank img{}
+.Card.suit-spades .icons .rank img{
+  filter: contrast(0) sepia() saturate(5) hue-rotate(189deg) brightness(64%);
+}
 /*.Card.suit-monsters .icons .rank img{ 
   filter: contrast(0) sepia() saturate(10) hue-rotate();
 }*/
 
+.Card.suit-hearts .icons .suit{ 
+  background-position: 2em 0em;
+}
+.Card.suit-clubs .icons .suit{ 
+  background-position: 0em 0em;
+}
+.Card.suit-spades .icons .suit{
+  background-position: 3em 0em;
+}
+.Card.suit-monsters .icons .suit{
+  background-position: 1em 0em;
+}
 
-.backgroundColor{
+
+.background{
   /*display: none;*/
   position: absolute;
-  top: 1.3em; left: 1.3em; right: 1.3em; bottom: 1.3em;
-  opacity: 0.15;
-  border-radius: 0.4em;
+  top: 3mm;
+  left: 3mm;
+  right: 3mm;
+  bottom: 3mm;
 }
-.Card.suit-hearts .backgroundColor{ background-color: red; }
-.Card.suit-clubs .backgroundColor{ background-color: dodgerblue; }
-.Card.suit-spades .backgroundColor{ background-color: black; }
-.Card.suit-monsters .backgroundColor{ background-color: green; }
-.Card.suit-monsters.type-hybrid .backgroundColor{ background-color: darkolivegreen; }
+
+.graphic{
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 50%;
+  top: 12mm;
+  bottom: 12mm;
+  left: 12mm;
+  right: 12mm;
+  filter: contrast(0) brightness(10);
+}
+.graphic.graphic-duel{ background-image: url('../assets/icon-duel.png') }
+.graphic.graphic-headshot{ background-image: url('../assets/icon-target.png') }
+.graphic.graphic-evasion{ background-image: url('../assets/icon-evasion.png') }
+.graphic.graphic-landmine{ background-image: url('../assets/icon-landmine.png') }
+
+
+.Card.suit-hearts .icons{ color: #d40000; }
+.Card.suit-clubs .icons{ color: #30a386; }
+.Card.suit-spades .icons{ color: #006994; }
+.Card.suit-monsters .icons{ color: #262626; }
+
+.Card.suit-hearts .background{
+  background-color: #d40000;
+  background-image: url('../assets/bg-hearts.png');
+}
+.Card.suit-clubs .background{
+  background-color: #30a386;
+  background-image: url('../assets/bg-clubs.png');
+}
+.Card.suit-spades .background{
+  background-color: #006994;
+  background-image: url('../assets/bg-spades.png');
+}
+.Card.suit-monsters .background{
+  background-color: #262626;
+}
+.Card.suit-monsters.type-hybrid .background{
+  background-color: #262626;
+}
+.Card .background{
+  background-size: 8mm;
+}
 
 
 .title{
@@ -109,44 +175,28 @@
 }
 .description {
   position: absolute;
-  bottom: 10mm;
-  margin: 0 10mm;
-  padding: 2mm;
-  font-size: 0.6rem;
+  bottom: 1mm;
+  margin: 0 13mm 0 0;
+  padding: 2mm 2mm 3mm 3mm;
+
+  text-align: left;
+  font-size: 0.5rem;
   letter-spacing: -0.05em;
   line-height: 1.2;
-  background: white;
+  background: rgba(255,255,255,0.95);
 }
 .description-hybrid{
   font-size: 0.55rem;
   font-style: italic;
 }
+.description.reverse{
+  transform: rotate(180deg);
+  bottom: auto;
+  top: 1mm;
+  margin: 0 0 0 13mm;
+}
 
 
-/* Graphicsl borders */
-.Card .border{
-  position: absolute;
-  box-sizing: border-box;
-}
-.borderTop, .borderBottom{
-  left: 1.2rem;
-  right: 1.2rem;
-  height: 0.1rem;
-}
-.borderRight, .borderLeft{
-  top: 1.2rem;
-  bottom: 1.2rem;
-  width: 0.1rem;
-}
-.borderTop{ top: 0.8rem; }
-.borderRight{ right: 0.8rem; }
-.borderBottom{ bottom: 0.8rem; }
-.borderLeft{ left: 0.8rem; }
-
-.Card.type-action .border{ background-color: red; }
-/*.Card.type-attack .border{ background-color: blue; }*/
-.Card.type-monster .border{ background-color: green; }
-.Card.type-hybrid .border{ background-color: darkolivegreen; }
 
 .Card b.action{ color: red; }
 .Card b.attack{ color: blue; }
@@ -154,33 +204,3 @@
 .Card b.hybrid{ color: darkolivegreen; }
 
 
-.Card .sideText{
-  position: absolute;
-  box-sizing: border-box;
-  text-align: left;
-
-  padding: 0.3em;
-  background: white;
-  border: 0.1em dashed white;
-  border-radius: 0.5em;
-
-  text-orientation: sideways;
-  font-size: 0.7rem;
-  line-height: 1;
-}
-.Card.type-action .sideText{ border-color: red; }
-/*.Card.type-attack .sideText{ border-color: blue; }*/
-.Card.type-monster .sideText{ border-color: green; }
-.Card.type-hybrid .sideText{ border-color: darkolivegreen; }
-
-.Card .sideText.sideLeft{
-  left: -0.4rem;
-  top: 4rem;
-  writing-mode: vertical-rl;
-}
-.Card .sideText.sideRight{
-  right: 0.2rem;
-  bottom: 4rem;
-  writing-mode: vertical-lr;
-  transform: rotate(180deg);
-}
