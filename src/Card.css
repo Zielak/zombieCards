@@ -63,12 +63,18 @@
   text-align: center;
   letter-spacing: -0.1em;
   line-height: 0.75;
-  width: 1em;
-  height: 1em;
+  font-size: 1.2em;
+  width: 5mm;
+  height: 5mm;
+}
+.Card.rank-10 .icons .rank,
+.Card.type-hybrid .icons .rank{
+  margin-left: -0.6mm;
 }
 .icons .suit{
   width: 1em;
   height: 1em;
+  padding-top: 1mm;
 }
 .icons img{
   width: 100%;
@@ -80,11 +86,11 @@
   writing-mode: vertical-lr;
   line-height: 1;
   text-transform: uppercase;
-  padding-top: 2mm;
+  padding-top: 1mm;
 }
 
 
-.Card.suit-hearts .icons .rank img,{ 
+/*.Card.suit-hearts .icons .rank img{ 
   filter: contrast(0) sepia() saturate(70) hue-rotate(-12deg) brightness(84%);
 }
 .Card.suit-clubs .icons .rank img{ 
@@ -92,7 +98,7 @@
 }
 .Card.suit-spades .icons .rank img{
   filter: contrast(0) sepia() saturate(5) hue-rotate(189deg) brightness(64%);
-}
+}*/
 /*.Card.suit-monsters .icons .rank img{ 
   filter: contrast(0) sepia() saturate(10) hue-rotate();
 }*/
@@ -119,7 +125,7 @@
   right: 3mm;
   bottom: 3mm;
 }
-
+/*
 .graphic{
   position: absolute;
   background-repeat: no-repeat;
@@ -134,7 +140,7 @@
 .graphic.graphic-duel{ background-image: url('../assets/icon-duel.png') }
 .graphic.graphic-headshot{ background-image: url('../assets/icon-target.png') }
 .graphic.graphic-evasion{ background-image: url('../assets/icon-evasion.png') }
-.graphic.graphic-landmine{ background-image: url('../assets/icon-landmine.png') }
+.graphic.graphic-landmine{ background-image: url('../assets/icon-landmine.png') }*/
 
 
 .Card.suit-hearts .icons{ color: #d40000; }
@@ -156,9 +162,11 @@
 }
 .Card.suit-monsters .background{
   background-color: #262626;
+  background-image: url('../assets/bg-monster.png');
 }
 .Card.suit-monsters.type-hybrid .background{
   background-color: #262626;
+  background-image: url('../assets/bg-hybrid.png');
 }
 .Card .background{
   background-size: 8mm;
@@ -180,7 +188,7 @@
   font-size: 0.5rem;
   letter-spacing: -0.05em;
   line-height: 1.2;
-  background: rgba(255,255,255,0.95);
+  background: white;
 }
 .description-hybrid{
   font-size: 0.55rem;

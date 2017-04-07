@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="20mm"
+   height="20mm"
+   viewBox="0 0 0 35.433071"
+   id="svg4557"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="icon-landmine.svg"
+   inkscape:export-filename="/Users/dariusz/dev/zombieCards/assets/icon-landmine.png"
+   inkscape:export-xdpi="127"
+   inkscape:export-ydpi="127">
+  <defs
+     id="defs4559" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.45254834"
+     inkscape:cx="3.3252146"
+     inkscape:cy="-436.25739"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer2"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-width="976"
+     inkscape:window-height="792"
+     inkscape:window-x="1100"
+     inkscape:window-y="595"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata4562">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer"
+     style="display:inline">
+    <g
+       id="g53504"
+       transform="translate(-29.306656,3.5103209)">
+      <path
+         id="path7220"
+         d="m 57.367672,23.728475 0,9.3359 a 26.537281,26.537281 0 0 0 -19.4336,25.5411 26.537281,26.537281 0 0 0 0.13281,2.4316 c -0.007,0.098 -0.0139,0.1954 -0.0215,0.293 l 53.5,0 c -0.22595,-3.4698 -0.70848,-6.9059 -1.27539,-10.1016 a 26.939383,27.207448 0 0 0 -0.28711,-0.875 26.939383,27.207448 0 0 0 -1.10156,-2.4805 26.939383,27.207448 0 0 0 -1.33985,-2.3593 26.939383,27.207448 0 0 0 -0.13281,-0.1895 26.537281,26.537281 0 0 0 -14.5293,-11.8515 l 0,-9.7442 -15.51171,0 z"
+         style="display:inline;opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:5.8335743;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:6.83999968;stroke-opacity:1"
+         inkscape:connector-curvature="0" />
+      <rect
+         style="display:inline;opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:6.83999968;stroke-opacity:1"
+         id="rect7230"
+         width="4.4013839"
+         height="13.204152"
+         x="62.922707"
+         y="2.515425" />
+      <rect
+         transform="matrix(0.75476946,0.65599014,-0.65599014,0.75476946,0,0)"
+         y="-48.949562"
+         x="67.351883"
+         height="13.204152"
+         width="4.4013839"
+         id="rect7232"
+         style="display:inline;opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:6.83999968;stroke-opacity:1" />
+      <rect
+         inkscape:transform-center-x="-27.779195"
+         style="display:inline;opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:6.83999968;stroke-opacity:1"
+         id="rect7234"
+         width="4.4013839"
+         height="13.204152"
+         x="-31.335636"
+         y="36.822411"
+         transform="matrix(-0.75476946,0.65599014,0.65599014,0.75476946,0,0)" />
+    </g>
+  </g>
+</svg>

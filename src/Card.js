@@ -6,12 +6,12 @@ import descriptions from './Descriptions';
 import IconDuel from '../assets/icon-duel.png';
 import IconEvasion from '../assets/icon-evasion.png';
 import IconLandmine from '../assets/icon-landmine.png';
-import IconHeadshot from '../assets/icon-target.png';
+import IconHeadshot from '../assets/icon-headshot.png';
 
-import IconHearts from '../assets/icon-duel.png';
-import IconClubs from '../assets/icon-evasion.png';
-import IconSpades from '../assets/icon-landmine.png';
-import IconMonsters from '../assets/icon-target.png';
+import IconHearts from '../assets/icon-hearts.png';
+import IconClubs from '../assets/icon-clubs.png';
+import IconSpades from '../assets/icon-spades.png';
+import IconMonsters from '../assets/icon-monsters.png';
 
 const HEARTS   = 'hearts'
 const SPADES   = 'spades'
@@ -154,8 +154,9 @@ class Card extends Component {
   }
 
   value2opacity(){
+    let num = (parseFloat(this.state.value)) /10
     return !!this.state.value ? {
-      opacity: (parseFloat(this.state.value)) /10
+      opacity: isNaN(num) ? 1 : num
     } : {}
   }
 
