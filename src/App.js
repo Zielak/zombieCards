@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Card from './Card.js'
-import Board from './Board.js'
+// import Board from './Board.js'
 // import logo from './logo.svg'
 import './App.css'
 
@@ -21,28 +21,27 @@ class App extends Component {
       cards.push(<Card key={i+'m2'} value={i} suit='monsters' type='monster' />)
     }
     cards.push(<Card key='dm' value='duel' suit='monsters' type='hybrid' title='Pojedynek' />)
-    cards.push(<Card key='hm' value='headshot' suit='monsters' type='hybrid' title='Celny strał' />)
+    cards.push(<Card key='hm' value='headshot' suit='monsters' type='hybrid' title='Celny strzał' />)
     cards.push(<Card key='em' value='evasion' suit='monsters' type='hybrid' title='Unik' />)
     cards.push(<Card key='lm' value='landmine' suit='monsters' type='hybrid' title='Mina' />)
 
     // Actions
     for (let suit of ['hearts', 'spades', 'clubs']) {
       cards.push(<Card key={'d'+suit[0]} value='duel' suit={suit} type='action' title='Pojedynek' />)
-      cards.push(<Card key={'h'+suit[0]} value='headshot' suit={suit} type='action' title='Celny strał' />)
+      cards.push(<Card key={'h'+suit[0]} value='headshot' suit={suit} type='action' title='Celny strzał' />)
       cards.push(<Card key={'e'+suit[0]} value='evasion' suit={suit} type='action' title='Unik' />)
       cards.push(<Card key={'l'+suit[0]} value='landmine' suit={suit} type='action' title='Mina' />)
     }
+    cards.push(<Card key={'t1'} value='thief' suit='thief' type='action' title='Złodziej' />)
+    cards.push(<Card key={'t2'} value='thief' suit='thief' type='action' title='Złodziej' />)
 
 
     return (
       <div className="App">
-        {/*<p className="App-intro">
-          We've got {cards.length} cards!
-        </p>*/}
         <div className="cards">
           {cards}
         </div>
-        <Board/>
+        {/*<Board/>*/}
       </div>
     );
   }

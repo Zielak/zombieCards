@@ -9,11 +9,11 @@
   float: left;
   width: 56mm;
   height: 87mm;
-  margin: 1mm;
+  /*margin: 1mm;*/
   background: white;
 
   border: 1px solid white;
-  border-radius: 2mm;
+  border-radius: 1.5mm;
   box-sizing: border-box;
 
   break-before: avoid-page;
@@ -169,20 +169,21 @@
   background-image: url('../assets/bg-hybrid.png');
 }
 .Card .background{
-  background-size: 8mm;
+  background-size: 166%;
 }
 
 
 .title{
   font-size: 1rem;
   font-weight: bold;
-  margin: 0.2em 0;
+  margin: 0 0 0.2em;
 }
 .description {
   position: absolute;
-  bottom: 1mm;
-  margin: 0 13mm 0 0;
+  bottom: auto;
+  top: 1mm;
   padding: 2mm 2mm 3mm 3mm;
+  margin: 0 0 0 13mm;
 
   text-align: left;
   font-size: 0.5rem;
@@ -190,22 +191,38 @@
   line-height: 1.2;
   background: white;
 }
-.description-hybrid{
+.description-intro{
   font-size: 0.55rem;
   font-style: italic;
 }
 .description.reverse{
+  top: auto;
+  bottom: 1mm;
+  margin: 0 13mm 0 0;
   transform: rotate(180deg);
-  bottom: auto;
-  top: 1mm;
-  margin: 0 0 0 13mm;
 }
 
 
 
-/*.Card b.action{ color: red; }
-.Card b.attack{ color: blue; }
-.Card b.monster{ color: green; }
-.Card b.hybrid{ color: darkolivegreen; }*/
 
+
+
+
+
+.Card.rank-thief{
+  color: white;
+  background: black;
+  border-color: black;
+}
+.rank-thief .description{
+  background: black;
+  margin: 0 0 0 10mm;
+}
+.rank-thief .description.reverse{
+  margin: 0 10mm 0 0;
+}
+.rank-thief .icons{
+  background: black;
+  border-color: black;
+}
 

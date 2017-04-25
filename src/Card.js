@@ -7,6 +7,7 @@ import IconDuel from '../assets/icon-duel.png';
 import IconEvasion from '../assets/icon-evasion.png';
 import IconLandmine from '../assets/icon-landmine.png';
 import IconHeadshot from '../assets/icon-headshot.png';
+import IconThief from '../assets/icon-joker.png';
 
 import IconHearts from '../assets/icon-hearts.png';
 import IconClubs from '../assets/icon-clubs.png';
@@ -22,6 +23,7 @@ const ATTACK   = 'attack'
 const ACTION   = 'action'
 const MONSTER  = 'monster'
 const HYBRID   = 'hybrid'
+const THIEF    = 'thief'
 
 const DUEL     = 'duel'
 const HEADSHOT = 'headshot'
@@ -60,6 +62,8 @@ class Card extends Component {
         return <img src={IconEvasion} alt="🏃"/>
       case LANDMINE:
         return <img src={IconLandmine} alt="💥"/>
+      case THIEF:
+        return <img src={IconThief} alt="✪"/>
       default:
         return '?'
     }
@@ -70,7 +74,7 @@ class Card extends Component {
       case DUEL:
         return 'Pojedynek'
       case HEADSHOT:
-        return 'Celny strał'
+        return 'Celny strzał'
       case EVASION:
         return 'Unik'
       case LANDMINE:
@@ -127,22 +131,25 @@ class Card extends Component {
     return (this.state.title || descriptions[this.state.value]) ?
     <div>
         <div className="description">
-        {this.getHybridDescription()}
+        {this.getIntroDescription()}
         <div className="title">{this.state.title}</div>
         {descriptions[this.state.value]}
       </div>
       <div className="description reverse">
-        {this.getHybridDescription()}
+        {this.getIntroDescription()}
         <div className="title">{this.state.title}</div>
         {descriptions[this.state.value]}
       </div>
     </div> : ''
   }
 
-  getHybridDescription(){
-    return this.state.type === HYBRID ?
-      <div className="description-hybrid">
-        Po pokonaniu zagraj jak:
+  getIntroDescription(){
+    let str = '';
+    if(this.state.type === HYBRID) str = 'Po pokonaniu zagraj jak:';
+    if(this.state.value === THIEF) str = 'Zagraj poza swoją kolejką.';
+    return str.length > 0 ?
+      <div className="description-intro">
+        {str}
       </div> : ''
   }
 
